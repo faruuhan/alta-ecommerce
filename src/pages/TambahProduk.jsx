@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SideNav from "../components/SideNav";
-import LogoPlaceholder from "../assets/placeholder-image.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "../styles/TambahProduk.css";
@@ -17,10 +16,8 @@ const TambahProduk = () => {
           <div className="col-lg-9">
             <h3 className="title-section">Tambah Produk</h3>
             <div className="card border-0">
-              <div className="card-header border-0 bg-light">
-                <h5 className="sub-title-section pt-3">Informasi Produk</h5>
-              </div>
               <div className="card-body">
+                <h5 className="sub-title-section py-3">Informasi Produk</h5>
                 <div class="mb-3 row">
                   <div className="col-lg-3">
                     <label htmlFor="namaProduk" className="formLabel">
@@ -28,7 +25,7 @@ const TambahProduk = () => {
                     </label>
                     <p className="subFormLabel">Cantumkan min. 40 karakter agar semakin menarik dan mudah ditemukan oleh pembeli, terdiri dari jenis produk, merek, dan keterangan seperti warna, bahan, atau tipe.</p>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg">
                     <input type="text" className="form-control" id="namaProduk" placeholder="Contoh: Laptop Ryzen 5 5400u" />
                   </div>
                 </div>
@@ -38,7 +35,7 @@ const TambahProduk = () => {
                       Kategori
                     </label>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg">
                     <select className="form-select" aria-label="Default select example">
                       <option selected>Pilih Kategori</option>
                       <option value="1">One</option>
@@ -53,7 +50,7 @@ const TambahProduk = () => {
                       Harga
                     </label>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg">
                     <input type="text" className="form-control" id="harga" placeholder="Masukan Harga" />
                   </div>
                 </div>
@@ -63,7 +60,7 @@ const TambahProduk = () => {
                       Stok Produk
                     </label>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg">
                     <input type="number" className="form-control" id="stokProduk" placeholder="Masukan Stok Produk" />
                   </div>
                 </div>
@@ -77,19 +74,18 @@ const TambahProduk = () => {
                       anda
                     </p>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg">
                     <textarea name="" id="" cols="30" rows="10" className="form-control"></textarea>
                   </div>
                 </div>
                 <div class="mb-3 row">
                   <div className="col-lg-3">
-                    <label htmlFor="namaProduk" className="formLabel">
+                    <label htmlFor="gambarProduk" className="formLabel">
                       Gambar Produk
                     </label>
                   </div>
-                  <div className="col-lg-6">
-                    <img src={LogoPlaceholder} width={189} className="img-thumbnail mb-2" alt="..." />
-                    <input class="form-control" type="file" id="formFile"></input>
+                  <div className="col-lg">
+                    <input type="text" class="form-control" id="gambarProduk"></input>
                   </div>
                 </div>
                 <div className="row">
