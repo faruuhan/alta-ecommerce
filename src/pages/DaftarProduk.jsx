@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import SideNav from "../components/SideNav";
 import LogoPlaceholder from "../assets/placeholder-image.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.js";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 const DaftarProduk = () => {
   return (
