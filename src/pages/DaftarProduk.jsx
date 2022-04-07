@@ -20,8 +20,8 @@ const DaftarProduk = () => {
             <div className="card border-0">
               <div className="card-body">
                 <h5 className="sub-title-section py-3">Informasi Produk</h5>
-                <div class="table-responsive">
-                  <table class="table">
+                <div className="table-responsive">
+                  <table className="table">
                     <thead style={{ background: "#EEEEEE" }}>
                       <tr>
                         <th className="py-3 px-2">Produk</th>

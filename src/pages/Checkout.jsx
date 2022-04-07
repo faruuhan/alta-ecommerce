@@ -16,25 +16,25 @@ const Checkout = () => {
                 <div className="row justify-content-center">
                   <div className="col-lg-6">
                     <div className="mb-4">
-                      <label for="Alamat" class="formLabel mb-3">
+                      <label htmlFor="Alamat" className="formLabel mb-3">
                         Alamat
                       </label>
-                      <input type="text" class="form-control mb-2" id="namaJalan" placeholder="Nama Jalan" />
-                      <input type="text" class="form-control mb-2" id="kota" placeholder="Kota" />
-                      <input type="text" class="form-control mb-2" id="provinsi" placeholder="Provinsi" />
-                      <input type="text" class="form-control" id="kodePos" placeholder="Kode Pos" />
+                      <input type="text" className="form-control mb-2" id="namaJalan" placeholder="Nama Jalan" />
+                      <input type="text" className="form-control mb-2" id="kota" placeholder="Kota" />
+                      <input type="text" className="form-control mb-2" id="provinsi" placeholder="Provinsi" />
+                      <input type="text" className="form-control" id="kodePos" placeholder="Kode Pos" />
                     </div>
                     <div className="mb-4">
-                      <label for="Pembayaran" class="formLabel mb-3">
+                      <label htmlFor="Pembayaran" className="formLabel mb-3">
                         Pembayaran
                       </label>
-                      <select class="form-select mb-2" aria-label="Default select example">
-                        <option selected>Metode Pembayaran</option>
+                      <select className="form-select mb-2" aria-label="Default select example">
+                        <option defaultValue="selected">Metode Pembayaran</option>
                         <option value="1">Transfer Bank</option>
                         <option value="2">Virtual Account</option>
                       </select>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Bank Tujuan</option>
+                      <select className="form-select" aria-label="Default select example">
+                        <option defaultValue="selected">Bank Tujuan</option>
                         <option value="1">BCA</option>
                         <option value="2">Mandiri</option>
                       </select>

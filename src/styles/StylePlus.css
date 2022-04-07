@@ -44,3 +44,9 @@
   color: #ffffff;
   background-color: #fd5d51;
 }
+
+.form-control,
+.form-select {
+  font-family: "Open Sans", sans-serif;
+  border-color: #212529;
+}

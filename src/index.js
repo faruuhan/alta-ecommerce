@@ -1,13 +1,13 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./styles/index.css";
-import TambahProduk from "./pages/TambahProduk";
+import App from "./routes/Routes";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <TambahProduk />
+    <App />
   </React.StrictMode>
 );
 
