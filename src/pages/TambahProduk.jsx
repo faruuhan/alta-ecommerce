@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import SideNav from "../components/SideNav";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import "../styles/TambahProduk.css";
+import "../styles/StylePlus.css";
 
 const TambahProduk = () => {
   return (
@@ -14,7 +14,7 @@ const TambahProduk = () => {
             <SideNav />
           </div>
           <div className="col-lg-9">
-            <h3 className="title-section">Tambah Produk</h3>
+            <h3 className="title-section mb-4">Tambah Produk</h3>
             <div className="card border-0">
               <div className="card-body">
                 <h5 className="sub-title-section py-3">Informasi Produk</h5>
@@ -38,9 +38,9 @@ const TambahProduk = () => {
                   <div className="col-lg">
                     <select className="form-select" aria-label="Default select example">
                       <option selected>Pilih Kategori</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="1">Elektronik</option>
+                      <option value="2">Pakaian</option>
+                      <option value="3">Alat Rumah Tangga</option>
                     </select>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ const TambahProduk = () => {
                 </div>
                 <div class="mb-3 row">
                   <div className="col-lg-3">
-                    <label htmlFor="namaProduk" className="formLabel">
+                    <label htmlFor="deskripsiProduk" className="formLabel">
                       Deskripsi Produk
                     </label>
                     <p className="subFormLabel">
@@ -75,7 +75,7 @@ const TambahProduk = () => {
                     </p>
                   </div>
                   <div className="col-lg">
-                    <textarea name="" id="" cols="30" rows="10" className="form-control"></textarea>
+                    <textarea name="" id="deskripsiProduk" cols="30" rows="10" className="form-control"></textarea>
                   </div>
                 </div>
                 <div class="mb-3 row">
@@ -90,7 +90,9 @@ const TambahProduk = () => {
                 </div>
                 <div className="row">
                   <div className="col-lg-3 ms-auto">
-                    <button className="btn btn-blue">Simpan Produk</button>
+                    <button className="btn btn-blue" style={{ width: "180px" }}>
+                      Simpan Produk
+                    </button>
                   </div>
                 </div>
               </div>

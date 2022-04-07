@@ -1,7 +1,9 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SideNav from "../components/SideNav";
+import { BsTrash, BsPencilSquare } from "react-icons/bs";
 import LogoPlaceholder from "../assets/placeholder-image.jpg";
+import "../styles/StylePlus.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
@@ -25,13 +27,15 @@ const DaftarProduk = () => {
                         <th className="py-3 px-2">Produk</th>
                         <th className="py-3">Harga</th>
                         <th className="py-3">Stock</th>
-                        <th className="py-3">Aksi</th>
+                        <th className="py-3" width={180}>
+                          Aksi
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="border-0">
                       <tr>
                         <td>
-                          <img src={LogoPlaceholder} width={150} alt="" className="float-lg-start me-2" />
+                          <img src={LogoPlaceholder} width={150} alt="" className="img-fluid float-lg-start me-2" />
                           <h5>Title Produk</h5>
                           <p className="fst-italic">Kategori</p>
                         </td>
@@ -42,7 +46,14 @@ const DaftarProduk = () => {
                           <p>18</p>
                         </td>
                         <td>
-                          <p>Edit | Delete</p>
+                          <div className="d-flex gap-2 flex-wrap">
+                            <button className="btn btn-blue" style={{ width: "50px", borderRadius: "18px" }}>
+                              <BsPencilSquare size={25} />
+                            </button>
+                            <button className="btn btn-red" style={{ width: "50px", borderRadius: "18px" }}>
+                              <BsTrash size={25} />
+                            </button>
+                          </div>
                         </td>
                       </tr>
                       <tr>
@@ -58,7 +69,14 @@ const DaftarProduk = () => {
                           <p>18</p>
                         </td>
                         <td>
-                          <p>Edit | Delete</p>
+                          <div className="d-flex gap-2 flex-wrap">
+                            <button className="btn btn-blue" style={{ width: "50px", borderRadius: "18px" }}>
+                              <BsPencilSquare size={25} />
+                            </button>
+                            <button className="btn btn-red" style={{ width: "50px", borderRadius: "18px" }}>
+                              <BsTrash size={25} />
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     </tbody>

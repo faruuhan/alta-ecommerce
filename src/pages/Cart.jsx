@@ -11,7 +11,7 @@ const Cart = () => {
     <Layout>
       <div className="container">
         <div className="row pt-5 pb-4">
-          <h3 className="title-section">History Order</h3>
+          <h3 className="title-section">Keranjang</h3>
           <div className="col-lg-8">
             <div className="card border-0">
               <div className="card-body">

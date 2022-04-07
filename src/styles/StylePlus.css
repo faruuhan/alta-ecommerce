@@ -27,10 +27,20 @@
   color: #ffffff;
   background-color: #66a6ff;
   border-radius: 60px;
-  width: 180px;
 }
 
 .btn-blue:hover {
   color: #ffffff;
   background-color: #4d95fa;
+}
+
+.btn-red {
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  background-color: #ff6f66;
+  border-radius: 60px;
+}
+.btn-red:hover {
+  color: #ffffff;
+  background-color: #fd5d51;
 }
