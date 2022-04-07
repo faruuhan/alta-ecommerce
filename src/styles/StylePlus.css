@@ -1,0 +1,52 @@
+.title-section {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.sub-title-section {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.formLabel {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.subFormLabel {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #c4c4c4;
+  padding-top: 14px;
+}
+
+.btn-blue {
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  background-color: #66a6ff;
+  border-radius: 60px;
+}
+
+.btn-blue:hover {
+  color: #ffffff;
+  background-color: #4d95fa;
+}
+
+.btn-red {
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  background-color: #ff6f66;
+  border-radius: 60px;
+}
+.btn-red:hover {
+  color: #ffffff;
+  background-color: #fd5d51;
+}
+
+.form-control,
+.form-select {
+  font-family: "Open Sans", sans-serif;
+  border-color: #212529;
+}
