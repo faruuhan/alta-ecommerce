@@ -1,0 +1,12 @@
+/** @format */
+
+.row label {
+	font-size: 12px;
+}
+
+.submit-btn {
+	background: linear-gradient(0deg, rgba(137, 247, 254, 0.2), rgba(137, 247, 254, 0.2)), #66a6ff;
+	border-radius: 60px;
+	border: none;
+	padding: 1vh 3vw;
+}
