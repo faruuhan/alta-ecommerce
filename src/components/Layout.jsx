@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import Navbar from "./Navbar";
-import { AuthContext } from "../utils/Context";
 
 const Layout = (props) => {
-  const auth = useContext(AuthContext);
+  const auth = JSON.parse(localStorage.getItem("auth"));
 
   if (auth) {
     return (
@@ -13,7 +12,6 @@ const Layout = (props) => {
       </div>
     );
   } else {
-    // console.log(auth[0].status);
     alert("login first!");
     window.location.href = "/login";
   }

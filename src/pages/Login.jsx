@@ -13,6 +13,8 @@ const Login = () => {
       .post("http://8.219.11.61:8000/login", data)
       .then((ress) => {
         localStorage.setItem("auth", JSON.stringify([ress.data]));
+        localStorage.setItem("statusLogin", "true");
+        window.location.href = "/";
       })
       .catch((err) => {
         console.log(err);
