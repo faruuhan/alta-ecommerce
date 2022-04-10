@@ -3,7 +3,6 @@ import Layout from "../components/Layout";
 import SideNav from "../components/SideNav";
 import axios from "axios";
 import { BsTrash, BsPencilSquare } from "react-icons/bs";
-import LogoPlaceholder from "../assets/placeholder-image.jpg";
 import "../styles/StylePlus.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";

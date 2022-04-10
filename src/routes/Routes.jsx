@@ -7,8 +7,10 @@ import HistoryOrder from "../pages/HistoryOrder";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import UpdateProduk from "../pages/UpdateProduk";
+import Homepage from "../pages/Homepage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Profile from "../pages/Profile";
 
 const App = () => {
   const [auth, setAuth] = useState({});
@@ -26,7 +28,9 @@ const App = () => {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<TambahProduk />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/TambahProduk" element={<TambahProduk />} />
           <Route path="/DaftarProduk" element={<DaftarProduk />} />
           <Route path="/UpdateProduk/:id" element={<UpdateProduk />} />
           <Route path="/HistoryOrder" element={<HistoryOrder />} />

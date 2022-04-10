@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg py-4 navbar-dark bg-blue">
       <div className="container">
         <a className="navbar-brand" href="#">
-          LOGO
+          GOLO STORE
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -21,8 +21,8 @@ const Navbar = () => {
             </div>
             <div className="navItem d-flex align-items-center gap-3">
               <BsPersonCircle color="#FFFFFF" size={25} />
-              <a className="navLink" href="#">
-                User Account
+              <a className="navLink" href="/Profile">
+                Profile
               </a>
             </div>
           </div>
