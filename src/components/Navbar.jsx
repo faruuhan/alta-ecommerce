@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto gap-5 align-items-lg-center">
             <div className="navItem">
-              <a href="" className="navLink">
+              <a href="/Cart" className="navLink">
                 <BsCart2 size={25} />
               </a>
             </div>

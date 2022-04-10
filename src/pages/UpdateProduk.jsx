@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Layout from "../components/Layout";
 import SideNav from "../components/SideNav";
@@ -6,11 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "../styles/StylePlus.css";
 
-const TambahProduk = () => {
-  useEffect(() => {
-    document.title = "Tambah Produk";
-  }, []);
-
+const UpdateProduk = () => {
+  const [dataProduct, setDataProduct] = useState({});
+  const params = useParams();
   const namaProduk = useRef();
   const deskripsiProduk = useRef();
   const kategori = useRef();
@@ -18,9 +17,34 @@ const TambahProduk = () => {
   const stokProduk = useRef();
   const gambarProduk = useRef();
 
-  const addProduct = () => {
+  useEffect(() => {
+    fetchData();
+    document.title = "Update Produk";
+  }, []);
+
+  const fetchData = () => {
+    const { id } = params;
+
+    let config = {
+      method: "get",
+      url: `http://8.219.11.61:8000/products/${id}`,
+      headers: {
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NDk2ODYwMzAsImlkIjozLCJuYW1lIjoiZmFyaGFuIn0.FoAvADDQWKVQQXON4OSzmFCr7iiM-173H0yiaBj1BXU",
+      },
+    };
+
+    axios(config)
+      .then(function (response) {
+        setDataProduct(response.data.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const updateProduct = () => {
+    const { id } = params;
     let data = JSON.stringify({
-      seller_id: "21313",
       name: namaProduk.current.value,
       description: deskripsiProduk.current.value,
       category: kategori.current.value,
@@ -32,10 +56,9 @@ const TambahProduk = () => {
     console.log(data);
 
     axios
-      .post("http://8.219.11.61:8000/products", {
+      .put(`https://8.219.11.61:8000/products/${id}`, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NDk2ODYwMzAsImlkIjozLCJuYW1lIjoiZmFyaGFuIn0.FoAvADDQWKVQQXON4OSzmFCr7iiM-173H0yiaBj1BXU",
         },
         data: data,
       })
@@ -45,6 +68,7 @@ const TambahProduk = () => {
       .catch((err) => {
         console.log(err);
       });
+    // window.location.href = "/DaftarProduk";
   };
 
   return (
@@ -55,11 +79,10 @@ const TambahProduk = () => {
             <SideNav />
           </div>
           <div className="col-lg-9">
-            <h3 className="title-section mb-4">Tambah Produk</h3>
+            <h3 className="title-section mb-4">Update Produk</h3>
             <div className="card border-0">
               <div className="card-body">
                 <h5 className="sub-title-section py-3">Informasi Produk</h5>
-                <form onSubmit={addProduct}></form>
                 <div className="mb-3 row">
                   <div className="col-lg-3">
                     <label htmlFor="namaProduk" className="formLabel">
@@ -68,7 +91,7 @@ const TambahProduk = () => {
                     <p className="subFormLabel">Cantumkan min. 40 karakter agar semakin menarik dan mudah ditemukan oleh pembeli, terdiri dari jenis produk, merek, dan keterangan seperti warna, bahan, atau tipe.</p>
                   </div>
                   <div className="col-lg">
-                    <input type="text" className="form-control" id="namaProduk" ref={namaProduk} placeholder="Contoh: Laptop Ryzen 5 5400u" />
+                    <input type="text" className="form-control" id="namaProduk" ref={namaProduk} placeholder="Contoh: Laptop Ryzen 5 5400u" defaultValue={dataProduct.name || ""} />
                   </div>
                 </div>
                 <div className="mb-3 row">
@@ -93,7 +116,7 @@ const TambahProduk = () => {
                     </label>
                   </div>
                   <div className="col-lg">
-                    <input type="text" className="form-control" id="harga" ref={harga} placeholder="Masukan Harga" />
+                    <input type="text" className="form-control" id="harga" ref={harga} placeholder="Masukan Harga" defaultValue={dataProduct.price} />
                   </div>
                 </div>
                 <div className="mb-3 row">
@@ -103,7 +126,7 @@ const TambahProduk = () => {
                     </label>
                   </div>
                   <div className="col-lg">
-                    <input type="number" className="form-control" id="stokProduk" ref={stokProduk} placeholder="Masukan Stok Produk" />
+                    <input type="number" className="form-control" id="stokProduk" ref={stokProduk} placeholder="Masukan Stok Produk" defaultValue={dataProduct.qty} />
                   </div>
                 </div>
                 <div className="mb-3 row">
@@ -117,7 +140,9 @@ const TambahProduk = () => {
                     </p>
                   </div>
                   <div className="col-lg">
-                    <textarea ref={deskripsiProduk} id="deskripsiProduk" cols="30" rows="10" className="form-control"></textarea>
+                    <textarea ref={deskripsiProduk} id="deskripsiProduk" cols="30" rows="10" className="form-control">
+                      {dataProduct.description}
+                    </textarea>
                   </div>
                 </div>
                 <div className="mb-3 row">
@@ -127,12 +152,12 @@ const TambahProduk = () => {
                     </label>
                   </div>
                   <div className="col-lg">
-                    <input type="text" className="form-control" id="gambarProduk" ref={gambarProduk}></input>
+                    <input type="text" className="form-control" id="gambarProduk" ref={gambarProduk} defaultValue={dataProduct.image}></input>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-3 ms-auto">
-                    <button type="submit" className="btn btn-blue" style={{ width: "180px" }} onClick={() => addProduct()}>
+                    <button type="submit" className="btn btn-blue" style={{ width: "180px" }} onClick={() => updateProduct()}>
                       Simpan Produk
                     </button>
                   </div>
@@ -146,4 +171,4 @@ const TambahProduk = () => {
   );
 };
 
-export default TambahProduk;
+export default UpdateProduk;

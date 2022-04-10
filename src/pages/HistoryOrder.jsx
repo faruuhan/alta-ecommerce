@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import SideNav from "../components/SideNav";
+import axios from "axios";
 import LogoPlaceholder from "../assets/placeholder-image.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 const HistoryOrder = () => {
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    axios
+      .get(`https://8.219.11.61:8000/order/`, {
+        headers: {
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NDk2ODYwMzAsImlkIjozLCJuYW1lIjoiZmFyaGFuIn0.FoAvADDQWKVQQXON4OSzmFCr7iiM-173H0yiaBj1BXU",
+        },
+      })
+      .then((ress) => {
+        console.log(ress);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <Layout>
       <div className="container">

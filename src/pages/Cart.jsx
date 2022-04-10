@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Layout from "../components/Layout";
 import { BsTrash } from "react-icons/bs";
 import LogoPlaceholder from "../assets/placeholder-image.jpg";
@@ -7,6 +8,33 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "../styles/StylePlus.css";
 
 const Cart = () => {
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    axios
+      .get(`https://satriacening.cloud.okteto.net/cart/`)
+      .then((ress) => {
+        console.log(ress);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const checkout = () => {
+    axios
+      .post(`https://satriacening.cloud.okteto.net/order/`)
+      .then((ress) => {
+        console.log(ress);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    window.location.href = "/Checkout";
+  };
   return (
     <Layout>
       <div className="container">
@@ -42,7 +70,7 @@ const Cart = () => {
                 <p>Biaya Pengiriman: Gratis</p>
                 <h5>Total Harga: Rp. 20,000</h5>
                 <div className="d-flex mt-4">
-                  <button className="btn btn-blue ms-auto" style={{ width: "100px" }}>
+                  <button onClick={() => checkout()} className="btn btn-blue ms-auto" style={{ width: "100px" }}>
                     Beli
                   </button>
                 </div>
